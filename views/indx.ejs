@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>MY APP</title>
+</head>
+<body>  
+  <table>
+    <tr>
+      <td>ID</td>
+      <td>Name</td>
+      <td>Address</td>
+      <td>Phone</td>
+    </tr>
+    <% for(var i = 0; i < users.length;i++){%>
+    <tr>
+      <td><%= users[i].id %></td>
+      <td><%= users[i].name %></td>
+      <td><%= users[i].address %></td>
+      <td><%= users[i].phone %></td>
+      <td><a href="edit/<%= users[i].id %>">
+        <button>Edit</button>
+      </a></td>
+      <td><a href="delete/<%= users[i].id %>">
+        <button type="submit">Delete</button></a></td>
+    </tr>
+    <%} %>
+  </table>
+  <form action="create" method="post">
+    Name: <input type="text" placeholder="name" name="name">
+    Address: <input type="text" placeholder="address" name="address">
+    Phone: <input type="text" placeholder="phone" name="phone">
+    <button type="submit">Submit</button>
+  </form>
+</body>
+</html>
